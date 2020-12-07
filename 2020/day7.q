@@ -9,10 +9,10 @@ r:ssr/[;(" bags contain ";" bags";" bag";".";", ");(",";"";"";"";",")]'[read0`:7
 r:{([k:`$raze x]v:y)} . flip 0 1 cut/:","vs/:r
 r:select k,c:"I"$1#'v,`$2_'v from ungroup r
 
-ws:([]v:`other;w:1#-1)
+ws:1!([]v:`other;w:1#-1)
 f:{[ws]
-	r::r lj 1!ws;
-	`v`w xcol 0!select sum c*1+w by k from r where (not any null@;w)fby k
+	r::r lj ws;
+	select w:sum c*1+w by v:k from r where (not any null@;w)fby k
  }
 ws : f/[ws]
-first exec w from ws where v=sg
+first value ws sg
