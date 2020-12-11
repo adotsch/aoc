@@ -1,7 +1,7 @@
 / part 1
 i:" ",/:read0[`:11.txt],\:" "
 mask: raze[-1 0 1 +/: -1 0 1 * w:count i 0] except 0
-t:select id, o:0 from (update id:i from ([]o:raze i)) where o="L"
+t:select `g#id, o:0 from (update id:i from ([]o:raze i)) where o="L"
 update n:(id+\:mask)inter\:t.id from `t;
 tr:3;
 f:{
@@ -14,7 +14,7 @@ t:f/[t]
 sum t.o
 
 / part 2
-t: ``n _ update o:0, x:id mod w, y: id div w from t
+t: ``n _ update o:0, x:`g#id mod w, y: `s#id div w from t
 update n1:{[x0;y0] last  exec id from t where x=x0,y<y0}'[x;y] from `t;
 update n2:{[x0;y0] first exec id from t where x=x0,y>y0}'[x;y] from `t;
 update n3:{[x0;y0] last  exec id from t where x<x0,y=y0}'[x;y] from `t;
