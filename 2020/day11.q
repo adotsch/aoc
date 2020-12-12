@@ -16,8 +16,8 @@ sum t.o
 t: update xpy:`g#x+y,xmy:`g#x-y from update o:0,x:`g#i mod w, y:`s#i div w from t
 update n1:{[x0;y0] last  exec i from t where x=x0,y<y0}'[x;y] from `t;
 update n2:{[x0;y0] first exec i from t where x=x0,y>y0}'[x;y] from `t;
-update n3:{[x0;y0] last  exec i from t where x<x0,y=y0}'[x;y] from `t;
-update n4:{[x0;y0] first exec i from t where x>x0,y=y0}'[x;y] from `t;
+update n3:{[x0;y0] last  exec i from t where y=y0,x<x0}'[x;y] from `t;
+update n4:{[x0;y0] first exec i from t where y=y0,x>x0}'[x;y] from `t;
 update n5:{[x0;y0] last  exec i from t where xpy=x0+y0,y<y0}'[x;y] from `t;
 update n6:{[x0;y0] first exec i from t where xpy=x0+y0,y>y0}'[x;y] from `t;
 update n7:{[x0;y0] last  exec i from t where xmy=x0-y0,y<y0}'[x;y] from `t;
