@@ -1,4 +1,4 @@
-i:flip (first;get@1_)@\:/:read0`:12.txt
+i:("CI";1 3)0:4$/:read0`:12.txt
 / part 1
 xy: 0 0;d:0;dxy:(1 0;0 1;-1 0;0 -1);D:"ENWS"
 {$[x in D;xy+::y*dxy D?x;x in"LR";d::mod[d+(1 -1)[x="R"]*y div 90;4];xy+::y*dxy d];}'[i 0;i 1];
