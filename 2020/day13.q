@@ -17,3 +17,17 @@ last(up/)flip(a;b)
 / satisfies both.
 / 
 / This is what the up function does, convers (p;a),(q;b) to (p*q,c).
+/
+/ In the example, t has to satisfy
+/
+/ t = x*7  + 0
+/ t = y*13 + (13-1)
+/ t = z*59 + (59-4)
+/ t = q*31 + (31-6)
+/ t = r*19 + (19-7)
+/
+/ and you can reduce that by (up/)(7 0;13 12;59 55;31 25;19 12) to
+/
+/ t = x*3162341 + 1068781
+/
+/ So, the first good t is 1068781
