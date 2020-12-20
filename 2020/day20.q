@@ -15,7 +15,7 @@ g:n cut {x,where[1=M[x count[x]-n]] except x}/[g]                               
 rots:{{x,reverse'[x]}(reverse flip@)\[x]};hmir:{(x;reverse x)};id:enlist        / permutations
 right:{last'[x]~first'[y]};left:{right[y;x]};                                   / relations
 below:{last[x]~first y};above:{below[y;x]}                                  
-orient:{[x;y;p1;p2;r]t first where(any')(t:p1[x])r/:\:p2[y]}                    / orient x to y
+orient:{[x;y;p1;p2;r]t first where(any')(t:p1 x)r/:\:p2 y}                      / orient x to y
 t0:orient[;i g[1;0];hmir;rots;below] orient[i g[0;0];i g[0;1];rots;rots;right]  / orient s[0;0] to s[0;1] and s[1;0]
 r0:{orient[y;x;rots;id;left]}\[enlist[t0],i 1_g 0]                              / orient first row
 rs:{orient[;;rots;id;above]'[y;x]}\[enlist[r0],i 1_g]                           / orient rest of the grid
