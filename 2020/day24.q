@@ -10,7 +10,7 @@ life:{tr m wsum x N}
 "j"$sum 100 life/ c
 
 /
-         3 2
-        4 o 1
-         5 6
+          32
+         4o1
+         56
 \
