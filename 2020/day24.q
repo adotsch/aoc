@@ -12,5 +12,5 @@ life:{tr m wsum x N}
 /
          3 2
         4 o 1
-		 5 6
+         5 6
 \
