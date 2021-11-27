@@ -1,6 +1,6 @@
 
 t:flip`byr`iyr`eyr`hgt`hcl`ecl`pid`cid!()
-{`t upsert enlist(!). x}each"S: "0:/:trim@/:" "sv/:cut[0,where ""~/:p]p:read0`:4.txt;
+{`t upsert enlist(!). x}each"S: "0:/:trim@/:" "sv/:cut[0,where ""~/:p]p:read0`:04.txt;
 t:``cid _ t;   / ignore cid
 
 / part 1

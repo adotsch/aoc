@@ -1,4 +1,4 @@
-m:read0`:3.txt
+m:read0`:03.txt
 f:{M:(y cut m)[;0];sum".#"?M@'mod[x*til[count M];count m 0]}
 f[3;1]
 sum"#"=m@'mod[3*til[count m];count m 0]
