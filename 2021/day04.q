@@ -5,7 +5,7 @@ win:{b:flip a:5 cut x;5 in (sum a),sum b}
 score:()
 draw:{[t;d]
     t:update m|d=b from t;
-    score,::exec {x*sum y*1-z}'[d;b;m] from t where win'[m];
+    score,::exec d*sum@'b*1-m from t where win'[m];
     delete from t where win'[m]
  }
 t draw/ r;
