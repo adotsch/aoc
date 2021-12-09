@@ -6,7 +6,7 @@ j:0>i
 {j[x;y]:i[x;y]<min i[b[w]x+-1 1;y],i[x;b[h]y+-1 1]} .' cs;
 sum raze j*i+1
 //2
-j*:w cut 1+til w*h
+j*:h cut 1+til w*h
 {{
    if[9=i[x;y];:()];
    if[any g:i[x;y]>i[b[w]x+-1 1;y],i[x;b[h]y+-1 1];
