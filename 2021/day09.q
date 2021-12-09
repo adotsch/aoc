@@ -1,7 +1,6 @@
 i:"J"$''read0`:09.txt
-w:count i;h:count i 0
+w:count i;h:count i 0;cs:til[w] cross til[h]
 b:{y where y within 0,x-1}
-cs:til[w] cross til[h]
 //1
 j:0>i
 {j[x;y]:i[x;y]<min i[b[w]x+-1 1;y],i[x;b[h]y+-1 1]} .' cs;
