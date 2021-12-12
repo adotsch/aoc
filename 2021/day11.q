@@ -1,6 +1,6 @@
 i:raze "J"$''read0`:11.txt
-w:{x where x within 0 9}
-n:{[y;x]sum@'1 10 */: w[x+-1 0 1] cross w[y+-1 0 1]} .' til[10] cross til 10;
+w:{x where within[x:x+-1 0 1]0 9}
+n:{[y;x]sum@'1 10 */: w[x] cross w[y]} .' til[10] cross til 10;
 f:{[m]
     m+:1;
     fl:m>9;
