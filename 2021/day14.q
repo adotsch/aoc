@@ -1,9 +1,10 @@
 i:read0`:14.txt
 //1
 t:i 0
-pm:(!). flip (2_i)@\:(0 1;0 6 1)
-pairs:{(2#'-2_(1_)\[x])}
-f:{""{(-1_x),$[y in key pm;pm y;y]}/pairs x}
+pairs:2#'-2_(1_)\
+pm:{x!x}pairs t
+pm,:(!). flip (2_i)@\:(0 1;0 6 1)
+f:{""{(-1_x),pm y}/pairs x}
 ws:count@'group@
 score:(-).(max;min)@\:
 score ws 10 f/ t
