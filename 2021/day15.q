@@ -1,8 +1,6 @@
 i:"J"$''read0`:15.txt
 dijkstra:{
-    I:(2#2+n:count i)#0W;
-    s::1+til n;
-    I[s;s]:0;
+    I:.[(2#2+n)#0W;(s;s::1+til n:count i);:;0];
     f:{x[s;s]:i+min(x[s;s-1];x[s-1;s];x[s;s+1];x[s+1;s]);x[1;1]:0;x};
     f/[I] . 2#n
  }
