@@ -6,8 +6,11 @@ d=[(-1,0),(1,0),(0,-1),(0,1)]
 def dijkstra(i):
     N = len(i)
     I = [[0]*N]*N
+    n = [[[(x+dx,y+dy) for dx,dy in d if (0<=x+dx<N) and (0<=y+dy<N)]
+            for x in range(N)] 
+                for y in range(N)]
     while True:
-        J = [[i[y][x]+min(I[y+dy][x+dx] for dx,dy in d if (0<=x+dx<N) and (0<=y+dy<N)) 
+        J = [[i[y][x]+min(I[ny][nx] for nx,ny in n[y][x]) 
                 for x in range(N)] 
                     for y in range(N)]
         J[0][0] = 0
