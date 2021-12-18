@@ -9,8 +9,10 @@ reduce:{
                 e:first ep;
                 di:prd (::;sums)@\: x in .Q.n;
                 i1:di e;i2:di e+2;
-                if[1<i1;d[where di=i1-1]+:d e];
-                if[i2<max di;d[where di=i2+1]+:d e+2];
+                if[1<i1;
+                    d[di?i1-1]+:d e];
+                if[i2<max di;
+                    d[di?i2+1]+:d e+2];
                 rem:til[count x] except e + -1 0 1 2;
                 x@:rem;x[e-1]:"0";
                 d@:rem;d[e-1]:0;
