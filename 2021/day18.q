@@ -35,4 +35,4 @@ add:{reduce"[",x,",",y,"]"}
 mag:{{$[0>type x;x;sum 3 2*.z.s@'x]}get((.Q.n,"[],")!.Q.n,"();")x}
 
 mag (add/) i 
-max {mag add . x} peach {x where not (~).'x} enlist'[i] cross enlist'[i]
+max (mag add .) peach {x where not (~).'x} enlist'[i] cross enlist'[i]
