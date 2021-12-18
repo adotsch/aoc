@@ -1,10 +1,10 @@
 i:read0`:18.txt
 reduce:{
     f:{[x;d]
-        p:"n "0N=d;
         n:sums(-)."[]"=\:x;
+        p:" n"(n>4)&x in .Q.n;
         $[
-            count ep:@[p;where n<5;:;" "] ss "n n";
+            count ep:p ss "n n";
             [   //explode
                 e:first ep;
                 di:sums x in .Q.n;
