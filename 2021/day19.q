@@ -8,15 +8,11 @@ rz:"f"$(0 1 0;-1 0 0;0 0 1)
 rots:{distinct raze x mmu\:/: (m;rx;ry;rz)}/[enlist m]
 
 good_moves:{    //find moves that produce 12 overlapping beacons
-    y2x: raze x -\:/: y;
-    distinct where (12<=count x inter) each y2x!y +\:/: y2x
+    where 12<=count@'group raze x -\:/: y
  }
 
-t0:.z.p
 S:enlist 0 0 0  //sonars
 merge:{[J]      //merge the 1st beacon set with some other
-    -1 "#countdown ",string[count J],
-       " -- elapsed ",string"v"$(.z.p-t0);
     if[1=count J;:J];
     j0:J 0;jr:1_J;r:0;
     do[24;      //try rotations, find moves to merge beacon sets
