@@ -1,5 +1,5 @@
 i:read0`:19.txt
-j:"f"$get@'' -1_'1_'{(where "---"~/:3#'i) _ x}i,enlist""
+j:"f"$get@'' -1_'1_'(where i like "---*")_i,enlist""
 
 m:"f"$0 1 2 =/:0 1 2
 rx:"f"$(1 0 0;0 0 1;0 -1 0)
