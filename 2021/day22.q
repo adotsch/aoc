@@ -9,7 +9,9 @@ sp:{[A;B]
     xs:asc distinct (0 1+A[`X]),0 1+B[`X]; xc:where xs within A`X;
     ys:asc distinct (0 1+A[`Y]),0 1+B[`Y]; yc:where ys within A`Y;
     zs:asc distinct (0 1+A[`Z]),0 1+B[`Z]; zc:where zs within A`Z;
-    `X`Y`Z!/:2 cut' flip[(xs;next[xs]-1)][xc] cross flip[(ys;next[ys]-1)][yc] cross flip[(zs;next[zs]-1)][zc]
+    `X`Y`Z!/:2 cut' flip[(xs;next[xs]-1)][xc] cross 
+                    flip[(ys;next[ys]-1)][yc] cross 
+                    flip[(zs;next[zs]-1)][zc]
  }
 //test if interval(s) in a intersect b
 int:{[a;b] (b[0]<=a[;1])&(a[;0]<=b 1)}
