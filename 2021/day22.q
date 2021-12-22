@@ -4,14 +4,14 @@ r:{x+til 1 +y-x}
 f:{[c;o;x;y;z] .[c;(50+r . x;50+r . y;50+r . z);:;o]}
 (sum/) {f[x] . y}/[101 101 101#0b;20#i]
 //part 2
-//split up cube A so that each subcube is either inside/outside cube B
+//split up cube A so that each subcube is either inside/outside of cube B
 sp:{[A;B]
-    xs:asc distinct (0 1+A[`X]),0 1+B[`X]; xc:where xs within A`X;
-    ys:asc distinct (0 1+A[`Y]),0 1+B[`Y]; yc:where ys within A`Y;
-    zs:asc distinct (0 1+A[`Z]),0 1+B[`Z]; zc:where zs within A`Z;
-    `X`Y`Z!/:2 cut' flip[(xs;next[xs]-1)][xc] cross 
-                    flip[(ys;next[ys]-1)][yc] cross 
-                    flip[(zs;next[zs]-1)][zc]
+    xs:asc distinct (0 1+A[`X]),0 1+B[`X];
+    ys:asc distinct (0 1+A[`Y]),0 1+B[`Y];
+    zs:asc distinct (0 1+A[`Z]),0 1+B[`Z];
+    `X`Y`Z!/:2 cut' flip[(xs;next[xs]-1)][where xs within A`X] cross 
+                    flip[(ys;next[ys]-1)][where ys within A`Y] cross 
+                    flip[(zs;next[zs]-1)][where zs within A`Z]
  }
 //test if interval(s) in a intersect b
 int:{[a;b] (b[0]<=a[;1])&(a[;0]<=b 1)}
