@@ -4,6 +4,6 @@ dijkstra:{
     f:{x[s;s]:i+min(x[s;s-1];x[s-1;s];x[s;s+1];x[s+1;s]);x[1;1]:0;x};
     f/[I] . 2#n
  }
-dijkstra[]
+\t 0N!`part1,dijkstra[]
 i:1+mod[;9] 2(flip raze til[5]+\:)/i-1
-dijkstra[]
+\t 0N!`part2,dijkstra[]
