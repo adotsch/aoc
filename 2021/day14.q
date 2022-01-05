@@ -5,13 +5,13 @@ pairs:2#'-2_(1_)\
 pm:{x!x}pairs t
 pm,:(!). flip (2_i)@\:(0 1;0 6 1)
 f:{""{(-1_x),pm y}/pairs x}
-ws:count@'group@
+hist:count@'group@
 score:(-).(max;min)@\:
-score ws 10 f/ t
+score hist 10 f/ t
 //2
-T:ws pairs t
+T:hist pairs t
 PM:{x!{(1#x)!1#1}@'x}pairs t
 PM,:{x!1 1}@' (!). flip(2_i)@\:(0 1;(0 6;6 1))
 F:{value[x] wsum PM key x}
-WS:{div[;2] (ws(first t;last t)) + value[x] wsum ws@'key x}
-score WS 40 F/ T
+HIST:{div[;2] (hist(first t;last t)) + value[x] wsum hist@'key x}
+score HIST 40 F/ T
