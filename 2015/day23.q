@@ -7,5 +7,5 @@ jmp:{PC+::x}
 jie:{PC+::$[0=(get x 0)mod 2;x 1;1]}
 jio:{PC+::$[1=get x 0;x 1;1]}
 CPU:{[pc]$[0>pc;pc;pc>=count i;pc;get i PC::pc];PC}
-A:B:PC:0;CPU/[PC];B     //part 1
-A:1;B:PC:0;CPU/[PC];B   //part 2
+A:0;B:0;CPU/[0];B   //part 1
+A:1;B:0;CPU/[0];B   //part 2
