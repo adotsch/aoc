@@ -1,5 +1,4 @@
 i:ssr[;"+";""]@'read0`:23.txt
-A:B:PC:0
 a:`A;b:`B
 inc:{x set 1+get x;PC+::1}
 hlf:{x set get[x]div 2;PC+::1}
