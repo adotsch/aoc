@@ -1,4 +1,4 @@
-i:raze 1_'2 vs/: 16+"X"$/:first read0`:16.txt
+i:raze (4#2)vs/:"X"$/:first read0`:16.txt
 f:{
     v:2 sv i x+0 1 2;x+:3;
     t:2 sv i x+0 1 2;x+:3;
