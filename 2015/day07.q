@@ -1,6 +1,6 @@
 I:read0`:07.txt
-AND:{2 sv 1_min 2 vs/:65536+x,y}
-OR:{2 sv 1_max 2 vs/:65536+x,y}
+AND:{2 sv min (16#2)vs/:x,y}
+OR:{2 sv max (16#2)vs/:x,y}
 NOT:65535- 
 LSHIFT:{AND[65535] prd x,y#2}
 RSHIFT:{x div prd y#2}
