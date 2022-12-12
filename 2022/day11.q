@@ -1,7 +1,7 @@
 i:read0`11.txt
 c:{`item`op`cond`if1`if0`cnt!get'[(
     "(),",17_x 1;
-    "{[old]",18_ x[2],"}"),
+    "{[old]",18_x[2],"}"),
     last@'" "vs/:x 3 4 5],
     0
  } each 7 cut i
