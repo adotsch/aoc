@@ -17,6 +17,6 @@ prd 1+(where a~/:J;where b~/:J)     //2
 
 First parser before I realized it's JSON :)
 
-c:{get ssr/[x^!["[],";"{};"]x;("{}";"{";"}");("()";"enlist[";"]")]}
+p:{get ssr/[x^!["[],";"{};"]x;("{}";"{";"}");("()";"enlist[";"]")]}
 
 /
