@@ -1,8 +1,8 @@
-c:{get ssr/[x^!["[],";"{};"]x;("{}";"{";"}");("()";"enlist[";"]")]}
+c:{$[count x;.j.k x;::]}
 I:2#'3 cut c@'read0`13.txt
 cmp:{
-    $[(-7=type x)&-7=type y;    signum x-y;
-      (0=count x)|0=count y;    signum count[x]-count y;
+    $[(0>type x)&0>type y;      signum x-y;
+      (0=count x)|0=count y;    count[x]-count y;
       r:cmp[first x;first y];   r;
                                 cmp[1_(),x;1_(),y]]
  }
@@ -14,4 +14,9 @@ prd 1+(where a~/:J;where b~/:J)     //2
 \
 5605
 24969
+
+First parser before I realized it's JSON :)
+
+c:{get ssr/[x^!["[],";"{};"]x;("{}";"{";"}");("()";"enlist[";"]")]}
+
 /
