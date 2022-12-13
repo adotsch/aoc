@@ -1,7 +1,7 @@
 c:{$[count x;.j.k x;::]}
 I:2#'3 cut c@'read0`13.txt
 cmp:{
-    $[(0>type x)&0>type y;      signum x-y;
+    $[(0>type x)&0>type y;      `long$x-y;
       (0=count x)|0=count y;    count[x]-count y;
       r:cmp[first x;first y];   r;
                                 cmp[1_(),x;1_(),y]]
