@@ -12,15 +12,17 @@ f1:{
  }
 f1 each i;
 0+sum"#"=L
+
 //part 2
-L1:L2:L3:L4:([]x:();y:())
+L1:L2:L3:L4:()
+fr:{y + 4000000 * x}
 f2:{[x0;y0;x1;y1]
     d:1+abs[x0-x1]+abs[y0-y1];
     l:til d;
-    `L1 upsert ([]x:x0+l    ;y:(y0-d)+l);
-    `L2 upsert ([]x:(x0+d)-l;y:y0+l);
-    `L3 upsert ([]x:x0-l    ;y:(y0+d)-l);
-    `L4 upsert ([]x:(x0-d)+l;y:y0-l);
+    L1,:fr[x0+l    ;(y0-d)+l];
+    L2,:fr[(x0+d)-l;y0+l    ];
+    L3,:fr[x0-l    ;(y0+d)-l];
+    L4,:fr[(x0-d)+l;y0-l    ];
  }
 .[f2] each j;
-sum 4000000 1 * (raze/) L1 inter L2 inter L3 inter L4
+L1 inter L2 inter L3 inter L4
