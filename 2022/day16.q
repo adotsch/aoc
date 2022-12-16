@@ -99,3 +99,8 @@ BB:{[]
 maxScore:`x`score!0 0
 S:enlist pot start
 {first x`score}BB/[S]        // 2504
+
+/
+
+TODO: re-implement part 2: reduce graph to node AA and the nodes with rate>0, compute a
+distance matrix for this sub-graph. Implement better estimate for rate increase potential (pot).
