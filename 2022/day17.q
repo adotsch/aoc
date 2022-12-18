@@ -1,7 +1,5 @@
-i:read0`17.txt
-i:read0`17.txt
+i:first read0`17.txt
 
-i:first i
 {x}S:flip@'(
     (0 0;0 1;0 2;0 3);
     (0 1;1 0;1 1;1 2;2 1);
@@ -46,7 +44,8 @@ max C.y
 
 //part 2
 C:([]y:0;x:til 7);R:(1#0)!1#7;mi:0
-t:{r:`j`I`mi`H!(x mod 5;x;mi mod count i;max C.y);f x mod 5;r}each til count i;
+t:{r:`j`I`mi`H!(x mod 5;x;mi mod count i;max C.y);f x mod 5;r}
+    each til count i; // 3*count i for test input
 
 rep:first select from t where 1<(count;I)fby([]j;mi)
 
@@ -59,5 +58,4 @@ rep:(1#.q),first select from
 h:rep.H + rep.dH * div[1000000000000 - rep.I; rep.dI];
 rem:mod[1000000000000 - rep.I; rep.dI];
 h+: t[rep.I+rem;`H] - rep.H;
-
 show h
