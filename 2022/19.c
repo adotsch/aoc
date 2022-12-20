@@ -7,7 +7,7 @@
 
 int N;
 
-int f(int*maxg,int B[4][4],int n,int*s,int*r)
+int f(const int B[4][4],int*maxg,int n,int*s,int*r)
 {
     if(n==N)
     {
@@ -27,34 +27,38 @@ int f(int*maxg,int B[4][4],int n,int*s,int*r)
         if(*maxg>=e)
             return *maxg;
     }
-    int s0[4] = {s[0]+r[0],s[1]+r[1],s[2]+r[2],s[3]+r[3]};
-    int m = f(maxg,B,n+1,s0,r);
-    if(s[ore]>=B[ore][ore])
+    int m = 0;
+    if((s[ore]>=B[geo][ore])&&(s[obs]>=B[geo][obs]))
     {
-        int s0[4] = {s[0]+r[0]-B[ore][ore],s[1]+r[1],s[2]+r[2],s[3]+r[3]};
-        int r0[4] = {r[0]+1,r[1],r[2],r[3]};
-        int m0 = f(maxg,B,n+1,s0,r0);
-        if(m0>m)m=m0;
-    }
-    if(s[ore]>=B[cla][ore])
-    {
-        int s0[4] = {s[0]+r[0]-B[cla][ore],s[1]+r[1],s[2]+r[2],s[3]+r[3]};
-        int r0[4] = {r[0],r[1]+1,r[2],r[3]};
-        int m0 = f(maxg,B,n+1,s0,r0);
+        int s0[4] = {s[0]+r[0]-B[geo][ore],s[1]+r[1],s[2]+r[2]-B[geo][obs],s[3]+r[3]};
+        int r0[4] = {r[0],r[1],r[2],r[3]+1};
+        int m0 = f(B,maxg,n+1,s0,r0);
         if(m0>m)m=m0;
     }
     if((s[ore]>=B[obs][ore])&&(s[cla]>=B[obs][cla]))
     {
         int s0[4] = {s[0]+r[0]-B[obs][ore],s[1]+r[1]-B[obs][cla],s[2]+r[2],s[3]+r[3]};
         int r0[4] = {r[0],r[1],r[2]+1,r[3]};
-        int m0 = f(maxg,B,n+1,s0,r0);
+        int m0 = f(B,maxg,n+1,s0,r0);
         if(m0>m)m=m0;
     }
-    if((s[ore]>=B[geo][ore])&&(s[obs]>=B[geo][obs]))
+    if(s[ore]>=B[cla][ore])
     {
-        int s0[4] = {s[0]+r[0]-B[geo][ore],s[1]+r[1],s[2]+r[2]-B[geo][obs],s[3]+r[3]};
-        int r0[4] = {r[0],r[1],r[2],r[3]+1};
-        int m0 = f(maxg,B,n+1,s0,r0);
+        int s0[4] = {s[0]+r[0]-B[cla][ore],s[1]+r[1],s[2]+r[2],s[3]+r[3]};
+        int r0[4] = {r[0],r[1]+1,r[2],r[3]};
+        int m0 = f(B,maxg,n+1,s0,r0);
+        if(m0>m)m=m0;
+    }
+    if(s[ore]>=B[ore][ore])
+    {
+        int s0[4] = {s[0]+r[0]-B[ore][ore],s[1]+r[1],s[2]+r[2],s[3]+r[3]};
+        int r0[4] = {r[0]+1,r[1],r[2],r[3]};
+        int m0 = f(B,maxg,n+1,s0,r0);
+        if(m0>m)m=m0;
+    }
+    {
+        int s0[4] = {s[0]+r[0],s[1]+r[1],s[2]+r[2],s[3]+r[3]};
+        int m0 = f(B,maxg,n+1,s0,r);
         if(m0>m)m=m0;
     }
     return m;
@@ -72,15 +76,15 @@ K ff(K N_, K B_)
 {
     N = N_->j;
     int B[4][4] = {
-        { geti(B_,"ore","ore"), 0, 0, 0},
-        { geti(B_,"cla","ore"), 0, 0, 0},
-        { geti(B_,"obs","ore"), geti(B_,"obs","cla"), 0, 0},
-        { geti(B_,"geo","ore"), 0,geti(B_,"geo","obs"), 0}
+        {geti(B_,"ore","ore"), 0, 0, 0},
+        {geti(B_,"cla","ore"), 0, 0, 0},
+        {geti(B_,"obs","ore"), geti(B_,"obs","cla"), 0, 0},
+        {geti(B_,"geo","ore"), 0, geti(B_,"geo","obs"), 0}
     };
     int s[4] = {0,0,0,0};
     int r[4] = {1,0,0,0};
     int maxg=0;
-    int re = f(&maxg,B,0,s,r);
+    int re = f(B,&maxg,0,s,r);
     __builtin_printf("..%i..\n",re);
     R kj(re);
 }
