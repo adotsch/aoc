@@ -1,4 +1,4 @@
-i:read0`21m.txt
+i:read0`21.txt
 //part 1
 (v:`$4#'i)set'0;
 I:ssr[;"/";"%"]@'i
