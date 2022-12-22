@@ -3,6 +3,9 @@ i:read0`22.txt
 I:2 cut get"(0;",(ssr[;"L";";-1;"]ssr[;"R";";1;"]last i),")"
 J:(sums[I[;0]] mod 4) where I[;1]
 D:(1 0;0 1;-1 0;0 -1)
+M:-2_i
+M:" ",/:((max count each M)$M),\:" "
+M:{enlist[x],y,enlist x}[count[M 0]#" ";M]
 
 f1:{[d]
     x1:X+D[d]0;y1:Y+D[d]1;
@@ -14,12 +17,7 @@ f1:{[d]
     if["."=M[y1;x1];X::x1;Y::y1];
  }
 
-M:-2_i
-X:X0:1+min M[0]?".#";Y:Y0:1
-M:{w:max count each M;w#'M,\:w#" "}M
-M:" ",/:M,\:" "
-M:{enlist[x],y,enlist x}[count[M 0]#" ";M]
-
+X:X0:1+min M[1]?".#"; Y:1
 f1 each J;
 sum 1000 4 1 * Y,X,last J   //97356
 
@@ -67,7 +65,6 @@ f2:{[d]
     if["."=M[y1;x1];X::x1;Y::y1;dc::dc1];
  }
 
-X:X0; Y:Y0; dc:0
-
+X:X0; Y:1; dc:0
 f2 each J;
 sum 1000 4 1 * Y,X,(dc+last J)mod 4     //120175
