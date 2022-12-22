@@ -41,8 +41,8 @@ C:(" 12";
 tile:{[X;Y] C[(Y-1) div 50;(X-1) div 50]}
 
 f2:{[d]
-    di:">v<^" d0:mod[d+dc;4];dc1:dc;
-    x1:X+D[d0]0;y1:Y+D[d0]1;
+    di:">v<^" d0:mod[d+dc;4];
+    x1:X+D[d0]0;y1:Y+D[d0]1;dc1:dc;
     if[" "=M[y1;x1];
         t:tile[X;Y];
         if[(t;di)~"1^"; x1:1;     y1:X+100; dc1+:1];    / >6
