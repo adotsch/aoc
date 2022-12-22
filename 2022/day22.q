@@ -38,12 +38,10 @@ C:(" 12";
    "45 ";
    "6  ")
 
-Dc:">v<^"
-
 tile:{[X;Y] C[(Y-1) div 50;(X-1) div 50]}
 
 f2:{[d]
-    di:Dc d0:mod[d+dc;4];dc1:dc;
+    di:">v<^" d0:mod[d+dc;4];dc1:dc;
     x1:X+D[d0]0;y1:Y+D[d0]1;
     if[" "=M[y1;x1];
         t:tile[X;Y];
