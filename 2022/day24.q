@@ -1,8 +1,9 @@
 i:read0`24.txt
 d:">v<^"!(1 0;0 1;-1 0;0 -1)
-sx:count[i 0]-2;sy:count[i]-2;c:sx*sy
+sx:count[i 0]-2;sy:count[i]-2;
+c:sx*1+first where 0=mod[sx*1+til sy;sy]
 M:c#enlist("#><^v."!"#.....")i
-f:{[x;y]
+f:{
     t:i[y;x];
     $[t in "#.";();[
         xs:1+mod[(x-1)+d[t;0]*til c;sx];
@@ -11,21 +12,14 @@ f:{[x;y]
     ]]
  }
 .[f] each cross[1+til sx;1+til sy];
-c:1+(1_M)?M 0
-M:M0:c#M
-rot:{y .(x+til@'n)mod n:count@'(count[x]-1)first\y}
-dim:{-1_count@'first\[x]}
-tnei:{[n;m](raze/)@'n rot\:d#til prd d:dim m}
-N:tnei[(-1 0 0;-1 -1 0;-1 1 0;-1 0 -1;-1 0 1);M]
-M:(".#"!0 0W)raze/[M]
-D0:(raze/)(".#S"!0W 0W 0).[M0;0 0 1;:;"S"]
-F:{[D] D&0W^1+min M|/:D N}
-sh:{min (c;sy+2;sx+2)#x}
-D:F/[D0]
-{x}part1:sh[D][sy+1;sx]     //part1
-D1:(raze/)(".#S"!0W 0W,part1).[M0;(part1 mod c;sy+1;sx);:;"S"]
-D:F/[D1]
-part21:sh[D][0;1]
-D2:(raze/)(".#S"!0W 0W,part21).[M0;(part21 mod c;0;1);:;"S"]
-D:F/[D2]
-{x}part2:sh[D][sy+1;sx]     //part2
+F:{[j;T]
+    T:distinct T,update x:x mod(sx+2),y:y mod(sy+2) from raze(
+        update x-1 from T; update x+1 from T;
+        update y-1 from T; update y+1 from T);
+    (j+1;delete from T where "#"=M[j mod c]'[y;x])
+ }
+r1:  -1 + first .[{not (sx;sy+1) in y}] .[F]/ (  0;enlist`x`y!1 0)
+show r1 //part 1
+r21: -1 + first .[{not ( 1;   0) in y}] .[F]/ ( r1;enlist`x`y!(sx;sy+1))
+r2:  -1 + first .[{not (sx;sy+1) in y}] .[F]/ (r21;enlist`x`y!1 0)
+show r2 //part 2
