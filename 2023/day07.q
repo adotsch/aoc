@@ -10,5 +10,6 @@ sum exec B*i+1 from `H1`J1 xasc I
 l2:"J23456789TQKA"
 update J2:l2?C from `I;
 joker:{$[n:count x;@[x;n-1;+;5-sum x];1#5]}
+joker:{x,5-sum 0,x:-1_x}
 update H2:{h joker asc value hist x except"J"}'[C] from `I;
 sum exec B*i+1 from `H2`J2 xasc I
