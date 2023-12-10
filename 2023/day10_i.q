@@ -17,4 +17,7 @@ expand_s:{[i]
 j:142 cut @[raze i;where"S"<>raze r;:;"."]
 N:"NS" in\:/: n
 sum {sum (1 1~/:sums[N x] mod 2) where "."=x} each j  //part 2
-\\
+
+/
+
+^--- first version, slow, but worked
