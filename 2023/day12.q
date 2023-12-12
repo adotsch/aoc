@@ -1,7 +1,7 @@
 i:(::;get)@'/:" "vs/:read0`12.txt
 \l cached.q
 cached_fn[`f] {
-  $[0=count x;0=count y;
+  $[(sum[y]+count[y]-1)>count x;0;
     0=count y;not"#"in x;
     "."=x 0;f[1_x;y];
     "#"=x 0;$[x[y 0]in" .?";$["."in y[0]#x,".";0;f[(1+y 0)_x;1_y]];0];
