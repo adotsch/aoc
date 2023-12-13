@@ -7,6 +7,6 @@ g:{100 1*(f x;f flip x)}
 sum (raze/) g each i
 h:{
     rs:g each count[x 0]cut/:@[raze x;;".#"!"#."]'[til count raze x];
-    first raze/[rs] except raze 0,g x
+    first raze/[rs] except raze g x
  }
 sum h each i
