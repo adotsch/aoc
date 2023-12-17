@@ -6,6 +6,10 @@ f1:{[dr;dd;du;v]
     c: til[N]+/:v*til 4; w: sums B^j 3#c;
     min w + B^(dd&du)1_c
  }
+f2:{[dr;dd;du;v]
+    c: til[N]+/:v*til 11; w: sums B^j 10#c;
+    min (3_w) + B^(dd&du)4_c
+ }
 F:{[f;dr;dd;dl;du]
     dr&: f[dr;dd;du;1];
     dd&: f[dd;dl;dr;n];
@@ -14,9 +18,4 @@ F:{[f;dr;dd;dl;du]
     (dr;dd;dl;du)
  }
 first -11#min .[F f1]/[(d0;d0;d0;d0)]
-
-f2:{[dr;dd;du;v]
-    c: til[N]+/:v*til 11; w: sums B^j 10#c;
-    min (3_w) + B^(dd&du)4_c
- }
 first -11#min .[F f2]/[(d0;d0;d0;d0)]
