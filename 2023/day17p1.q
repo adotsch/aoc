@@ -16,11 +16,11 @@ f:{[dr;dd;du;v]
  }
 
 F:{[dr;dd;dl;du]
-    dr1: f[dr;dd;du;1];
-    dd1: f[dd;dl;dr;n];
-    dl1: f[dl;du;dd;-1];
-    du1: f[du;dr;dl;0-n];
-    (dr;dd;dl;du)&(dr1;dd1;dl1;du1)
+    dr&: f[dr;dd;du;1];
+    dd&: f[dd;dl;dr;n];
+    dl&: f[dl;du;dd;-1];
+    du&: f[du;dr;dl;0-n];
+    (dr;dd;dl;du)
  }
 
 first -4#min .[F]/[(d0;d0;d0;d0)]
