@@ -18,8 +18,7 @@ f:{[t]
  }
 s:{[t] sum 0<exec l|r|u|d from t}
 s f/[update r:1 from t where X=0,Y=0]
-{max {s f/[x]} peach {[j] update d:1 from t where X=j  ,Y=0  }'[til n],
-                     {[j] update u:1 from t where X=j  ,Y=n-1}'[til n],
-                     {[j] update l:1 from t where X=n-1,Y=j  }'[til n],
-                     {[j] update r:1 from t where X=0  ,Y=j  }'[til n]
- }`
+max {s f/[x]} peach {[j] update d:1 from t where X=j  ,Y=0  }'[til n],
+                    {[j] update u:1 from t where X=j  ,Y=n-1}'[til n],
+                    {[j] update l:1 from t where X=n-1,Y=j  }'[til n],
+                    {[j] update r:1 from t where X=0  ,Y=j  }'[til n]
