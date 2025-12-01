@@ -1,5 +1,5 @@
 # Advent of Code solutions
-This repository contains my [Q](https://code.kx.com/q/) solutions to the [Advent of Code](https://adventofcode.com/) puzzles of year 2015, 2016, 2020, 2021, 2022 and 2023.
+This repository contains my [Q](https://code.kx.com/q/) solutions to the [Advent of Code](https://adventofcode.com/) puzzles of year 2015, 2016, 2020, 2021, 2022, 2023 and 2025.
 
 # Cheating
 This repository is not intended to promote or otherwise encourage cheating.
