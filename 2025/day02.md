@@ -8,3 +8,8 @@ The result is a very fast solution.
 
 Part 2 asks for numbers whose digits repeat not just twice, but any number of times. Generalizing the approach from Part 1 seemed unnecessarily time-consuming, and I also realized that the intervals contain only a few million numbers, small enough to simply check each one directly.
 So I implemented a function that verifies whether a number is composed of repeated digit blocks. The idea is simple: for a 9-digit string `s`, the expression `s~9#3#s` tells you whether it consists of a 3-digit block repeated three times. The same principle extends naturally to other lengths and periods, just need to test all relevant periods, which becomes `any s~/:n#'p#\:s` after finding all relevant periods.
+
+# Part 2 KDB-X
+
+Both parts can be solved easily by matching the numbers against the regular expressions `^(.+)\1$` and `^(.+)\1+$`, respectively.
+Fortunately, KDB-X now supports full regular expressions.
