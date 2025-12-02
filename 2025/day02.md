@@ -1,6 +1,6 @@
 # Part 1
 
-My first solution for Part 1 relies on the fact that the numbers we are looking for within a range are of the form `n*11, n*101, n*1001, ...` that is, multiples of numbers with `2,4 6,...` digits, respectively.
+My first solution for Part 1 relies on the fact that the numbers we are looking for within a range are of the form `n*11, n*101, n*1001, ...` that is, multiples of numbers with `2,4,6,...` digits, respectively.
 It’s straightforward to adjust the `[𝑥,𝑦]` interval so that it includes only numbers with an even number of digits, and it’s also easy to generate all solutions of the form like `x<=n*11<=y` or `x<=n*101<=y`, etc.
 The result is a very fast solution.
 
