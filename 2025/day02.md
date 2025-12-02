@@ -13,3 +13,17 @@ So I implemented a function that verifies whether a number is composed of repeat
 
 Both parts can be solved easily by matching the numbers against the regular expressions `^(.+)\1$` and `^(.+)\1+$`, respectively.
 Fortunately, KDB-X now supports full regular expressions.
+
+# V2
+
+The input appears to be at most 10 digits long, so the total search space is small enough to enumerate all possible repeating patterns exhaustively.
+For instance, the two-digit repeating case (like 1010101010, 1212121212, etc.) can be generated in q as:
+
+```q
+raze (101010101;1010101;10101;101)*\:10+til 90
+```
+
+A handful of similar expressions will cover the other repetition lengths (three-digit, four-digit, etc.). Once we have all these candidates, we can simply take the intersection with the actual input numbers and sum the matches.
+The whole process is straightforward and finishes almost instantly.
+
+
