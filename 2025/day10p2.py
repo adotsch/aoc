@@ -11,8 +11,8 @@ def solve2(bu,jo):
     constraint = np.zeros((len(jo),len(bu)))
     target = np.array(jo)
     for i, b in enumerate(bu):
-        for j in range(len(jo)):
-            constraint[j][i] = 1 if j in b else 0
+        for j in b:
+            constraint[j][i] = 1
     return linprog(cost,A_eq=constraint,b_eq=target,integrality=True).fun
 
 print(sum(solve2(x,y) for (x,y) in zip(button,jolt)))
