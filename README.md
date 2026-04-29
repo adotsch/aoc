@@ -18,7 +18,7 @@ If you are competing you should always submit your results based on your own wor
 | Tadhg Downey | [Q](https://github.com/TadhgD/AOC) |
 | lukebrit27 | [Q](https://github.com/lukebrit27/advent-of-code-23) | 
 | Angus Wilson | [Q](https://github.com/AngusWilson/Advent23) |
-| Péter Györök | [Q](https://github.com/gyorokpeter/puzzle_solutions), [Q](https://github.com/gyorokpeter/puzzle_solutions/tree/main/aoc) |
+| Péter Györök | [Q](https://github.com/gyorokpeter/puzzle_solutions/tree/main/aoc) |
 | Rory Kemp | [K/Q](https://github.com/rak1507/aoc-2023), [APL](https://github.com/rak1507/Advent-Of-Code-APL) | 
 | Nick Nickolov (NGN) | [K](https://codeberg.org/ngn/k/src/branch/master/aoc) |
 | Aaron W. Hsu | [APL](https://github.com/arcfide/Advent_of_Code) |
